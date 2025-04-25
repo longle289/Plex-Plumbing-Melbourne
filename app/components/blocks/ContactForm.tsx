@@ -5,6 +5,7 @@ import Section, { SectionHeader } from "../ui/Section";
 import Button from "../ui/Button";
 import { contactInfo } from "../../lib/data";
 import { formatPhoneNumber } from "../../lib/utils";
+import { submitContactForm } from "../../lib/supabase";
 
 interface ContactFormProps {
   title?: string;
@@ -48,18 +49,41 @@ export default function ContactForm({
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     
-    // Simulate form submission
+    // Set loading state
     setFormStatus({
       submitted: true,
-      success: true,
-      message: "Thank you for your message. We'll get back to you shortly!",
+      success: false,
+      message: "Sending your message...",
     });
     
-    // In a real implementation, you would send the form data to your backend
-    // and handle success/error states accordingly
+    try {
+      // Submit form data to Supabase
+      const result = await submitContactForm(formData);
+      
+      if (result.success) {
+        setFormStatus({
+          submitted: true,
+          success: true,
+          message: "Thank you for your message. We'll get back to you shortly!",
+        });
+      } else {
+        setFormStatus({
+          submitted: true,
+          success: false,
+          message: `Error: ${result.error || 'Failed to send message. Please try again later.'}`,
+        });
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setFormStatus({
+        submitted: true,
+        success: false,
+        message: "An unexpected error occurred. Please try again later.",
+      });
+    }
   };
   
   return (
@@ -73,45 +97,88 @@ export default function ContactForm({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         {/* Contact Form */}
         <div className="lg:col-span-2">
-          {formStatus.submitted && formStatus.success ? (
-            <div className="bg-accent/10 p-6 rounded-lg border border-accent text-center">
-              <svg
-                className="w-16 h-16 text-accent mx-auto mb-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
-              <p className="text-gray-700">{formStatus.message}</p>
-              <Button
-                variant="accent"
-                className="mt-6"
-                onClick={() => {
-                  setFormStatus({
-                    submitted: false,
-                    success: false,
-                    message: "",
-                  });
-                  setFormData({
-                    name: "",
-                    email: "",
-                    phone: "",
-                    service: "",
-                    message: "",
-                  });
-                }}
-              >
-                Send Another Message
-              </Button>
-            </div>
+          {formStatus.submitted ? (
+            formStatus.success ? (
+              // Success state
+              <div className="bg-accent/10 p-6 rounded-lg border border-accent text-center">
+                <svg
+                  className="w-16 h-16 text-accent mx-auto mb-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
+                <p className="text-gray-700">{formStatus.message}</p>
+                <Button
+                  variant="accent"
+                  className="mt-6"
+                  onClick={() => {
+                    setFormStatus({
+                      submitted: false,
+                      success: false,
+                      message: "",
+                    });
+                    setFormData({
+                      name: "",
+                      email: "",
+                      phone: "",
+                      service: "",
+                      message: "",
+                    });
+                  }}
+                >
+                  Send Another Message
+                </Button>
+              </div>
+            ) : formStatus.message === "Sending your message..." ? (
+              // Loading state
+              <div className="bg-gray-100 p-6 rounded-lg border border-gray-200 text-center">
+                <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-primary mx-auto mb-4"></div>
+                <h3 className="text-2xl font-bold mb-2">Sending...</h3>
+                <p className="text-gray-700">Please wait while we send your message.</p>
+              </div>
+            ) : (
+              // Error state
+              <div className="bg-red-50 p-6 rounded-lg border border-red-200 text-center">
+                <svg
+                  className="w-16 h-16 text-red-500 mx-auto mb-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <h3 className="text-2xl font-bold mb-2">Something Went Wrong</h3>
+                <p className="text-gray-700">{formStatus.message}</p>
+                <Button
+                  variant="primary"
+                  className="mt-6"
+                  onClick={() => {
+                    setFormStatus({
+                      submitted: false,
+                      success: false,
+                      message: "",
+                    });
+                  }}
+                >
+                  Try Again
+                </Button>
+              </div>
+            )
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
