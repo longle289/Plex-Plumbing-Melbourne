@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary color - matching logo colors */
+  --primary: #2168A6;
+  --primary-light: #99CCF7;
+  --primary-dark: #0D4A77;
+  
+  /* Secondary color - another shade of blue */
+  --secondary: #1A5F9C;
+  --secondary-light: #2980B9;
+  --secondary-dark: #0F3B61;
+  
+  /* Accent color - representing eco-friendly solutions */
+  --accent: #3D7CAF;
+  --accent-light: #99CCF7;
+  --accent-dark: #2168A6;
+  
+  /* Neutral colors */
+  --background: #ffffff;
+  --foreground: #171717;
+  --gray-100: #f5f5f5;
+  --gray-200: #e5e5e5;
+  --gray-300: #d4d4d4;
+  --gray-400: #a3a3a3;
+  --gray-500: #737373;
+  --gray-600: #525252;
+  --gray-700: #404040;
+  --gray-800: #262626;
+  --gray-900: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --gray-100: #171717;
+    --gray-200: #262626;
+    --gray-300: #404040;
+    --gray-400: #525252;
+    --gray-500: #737373;
+    --gray-600: #a3a3a3;
+    --gray-700: #d4d4d4;
+    --gray-800: #e5e5e5;
+    --gray-900: #f5f5f5;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl lg:text-3xl;
+  }
+  
+  h5 {
+    @apply text-lg md:text-xl lg:text-2xl;
+  }
+  
+  h6 {
+    @apply text-base md:text-lg lg:text-xl;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[var(--primary)] text-white px-6 py-3 rounded-full font-medium hover:bg-[var(--primary-dark)] transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-[var(--secondary)] text-white px-6 py-3 rounded-full font-medium hover:bg-[var(--secondary-dark)] transition-colors;
+  }
+  
+  .btn-accent {
+    @apply bg-[var(--accent)] text-white px-6 py-3 rounded-full font-medium hover:bg-[var(--accent-dark)] transition-colors;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-[var(--primary)] text-[var(--primary)] px-6 py-3 rounded-full font-medium hover:bg-[var(--primary)] hover:text-white transition-colors;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
