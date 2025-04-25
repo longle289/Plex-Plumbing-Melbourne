@@ -36,7 +36,7 @@ export default function Footer() {
               </div>
             </div>
             
-            <p className="text-gray-400 mb-4">
+            <p className="text-gray-300 mb-4">
               Reliable and affordable plumbing solutions for homes and businesses across Melbourne.
             </p>
             
@@ -115,7 +115,7 @@ export default function Footer() {
                 <li key={service.id}>
                   <Link
                     href={`/en/services/${service.id}`}
-                    className="text-gray-400 hover:text-primary"
+                  className="text-gray-300 hover:text-primary"
                   >
                     {service.title}
                   </Link>
@@ -140,7 +140,7 @@ export default function Footer() {
                 <li key={location.slug}>
                   <Link
                     href={`/en/locations/${location.regionSlug}/${location.slug}`}
-                    className="text-gray-400 hover:text-primary"
+                    className="text-gray-300 hover:text-primary"
                   >
                     {location.name}
                   </Link>
@@ -160,7 +160,7 @@ export default function Footer() {
           {/* Hours */}
           <div>
             <h3 className="text-lg font-bold mb-4 text-white">Business Hours</h3>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-gray-300">
               <li className="flex justify-between">
                 <span>Monday - Friday</span>
                 <span>{contactInfo.hours.weekdays}</span>
@@ -177,7 +177,7 @@ export default function Footer() {
             
             <div className="mt-6">
               <h4 className="font-bold text-secondary mb-2">Emergency Service</h4>
-              <p className="text-gray-400">{contactInfo.emergency}</p>
+              <p className="text-gray-300">{contactInfo.emergency}</p>
               <Link
                 href="/en/services/emergency-plumbing"
                 className="btn-secondary mt-3 inline-block"

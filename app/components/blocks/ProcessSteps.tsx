@@ -83,7 +83,7 @@ export default function ProcessSteps({
               )}
               
               <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-              <p className="text-gray-600">{step.description}</p>
+              <p className="text-black md:text-gray-600">{step.description}</p>
               
               {/* Connector line for desktop */}
               {index < steps.length - 1 && (
@@ -125,7 +125,7 @@ export default function ProcessSteps({
               {/* Content */}
               <div className="ml-8">
                 <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                <p className="text-gray-600 mb-4">{step.description}</p>
+                <p className="text-black md:text-gray-600 mb-4">{step.description}</p>
                 
                 {step.image && (
                   <div className="relative h-48 w-full md:w-80 rounded-lg overflow-hidden">
@@ -186,7 +186,7 @@ export default function ProcessSteps({
                   <h3 className="text-2xl font-bold">{step.title}</h3>
                 </div>
                 
-                <p className="text-gray-600">{step.description}</p>
+                <p className="text-black md:text-gray-600">{step.description}</p>
               </div>
             </div>
           ))}

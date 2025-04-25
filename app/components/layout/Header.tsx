@@ -235,7 +235,7 @@ export default function Header() {
         <div className="container-custom py-4 space-y-2">
           <Link
             href="/en"
-            className="block py-2 text-gray-700 hover:text-primary font-medium"
+              className="block py-2 text-black md:text-gray-700 hover:text-primary font-medium"
             onClick={() => setMobileMenuOpen(false)}
           >
             Home
@@ -244,7 +244,7 @@ export default function Header() {
           {/* Mobile Services Dropdown */}
           <div>
             <button
-              className="flex justify-between items-center w-full py-2 text-gray-700 hover:text-primary font-medium"
+              className="flex justify-between items-center w-full py-2 text-black md:text-gray-700 hover:text-primary font-medium"
               onClick={() => setServicesMenuOpen(!servicesMenuOpen)}
             >
               Services
@@ -277,7 +277,7 @@ export default function Header() {
                 <Link
                   key={service.id}
                   href={`/en/services/${service.id}`}
-                  className="block py-1 text-gray-600 hover:text-primary"
+                  className="block py-1 text-black md:text-gray-600 hover:text-primary"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {service.title}
@@ -289,7 +289,7 @@ export default function Header() {
           {/* Mobile Locations Dropdown */}
           <div>
             <button
-              className="flex justify-between items-center w-full py-2 text-gray-700 hover:text-primary font-medium"
+              className="flex justify-between items-center w-full py-2 text-black md:text-gray-700 hover:text-primary font-medium"
               onClick={() => setLocationsMenuOpen(!locationsMenuOpen)}
             >
               Locations
@@ -322,7 +322,7 @@ export default function Header() {
                 <div key={region.slug} className="mb-2">
                   <Link
                     href={`/en/locations/${region.slug}`}
-                    className="block py-1 font-medium text-gray-700 hover:text-primary"
+                    className="block py-1 font-medium text-black md:text-gray-700 hover:text-primary"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {region.name}
@@ -333,7 +333,7 @@ export default function Header() {
                       <Link
                         key={city.slug}
                         href={`/en/locations/${region.slug}/${city.slug}`}
-                        className="block py-1 text-sm text-gray-600 hover:text-primary"
+                        className="block py-1 text-sm text-black md:text-gray-600 hover:text-primary"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {city.name}
@@ -357,7 +357,7 @@ export default function Header() {
           
           <Link
             href="/en/contact"
-            className="block py-2 text-gray-700 hover:text-primary font-medium"
+            className="block py-2 text-black md:text-gray-700 hover:text-primary font-medium"
             onClick={() => setMobileMenuOpen(false)}
           >
             Contact

@@ -55,7 +55,7 @@ export default function FeaturesList({
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <p className="text-black md:text-gray-600">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -67,7 +67,7 @@ export default function FeaturesList({
             <div key={index} className="bg-white p-6 rounded-lg shadow-md">
               <div className="text-primary mb-4">{feature.icon}</div>
               <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <p className="text-black md:text-gray-600">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -80,7 +80,7 @@ export default function FeaturesList({
               <div className="text-primary mr-4 mt-1">{feature.icon}</div>
               <div>
                 <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-black md:text-gray-600">{feature.description}</p>
               </div>
             </div>
           ))}

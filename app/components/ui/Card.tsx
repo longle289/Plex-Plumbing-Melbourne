@@ -44,7 +44,7 @@ export default function Card({
         
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         
-        {description && <p className="text-gray-600 mb-4">{description}</p>}
+        {description && <p className="text-black md:text-gray-600 mb-4">{description}</p>}
         
         {children}
       </div>
