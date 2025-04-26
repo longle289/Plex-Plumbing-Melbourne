@@ -123,7 +123,7 @@ export default function HomePage() {
       <HeroSection
         title="Professional Plumbing Services in Melbourne"
         subtitle="Reliable and affordable solutions for all your plumbing needs"
-        image="/images/Employee_Repairing_Drainage_Pipes.jpeg"
+        image="/images/Employee_Fixing_Kitchen_Retail_hero.jpeg"
         primaryButtonText="Request a Quote"
         primaryButtonHref="/en/contact"
         secondaryButtonText="Emergency Service"
