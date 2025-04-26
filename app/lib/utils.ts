@@ -125,3 +125,22 @@ export function getServicesForLocation(locationSlug: string, count?: number): Se
   
   return allServices;
 }
+
+/**
+ * Adds cache busting parameter to a URL
+ * @param url The URL to add cache busting to
+ * @returns URL with cache busting parameter
+ */
+export function withCacheBusting(url: string): string {
+  // Skip cache busting for external URLs
+  if (url.startsWith('http://') || url.startsWith('https://')) {
+    return url;
+  }
+  
+  // Use package version as cache buster
+  const version = '1.0.0'; // This matches the version in package.json
+  
+  // Add version parameter to URL
+  const separator = url.includes('?') ? '&' : '?';
+  return `${url}${separator}v=${version}`;
+}

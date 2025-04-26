@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Button from "../ui/Button";
-import { classNames } from "../../lib/utils";
+import { classNames, withCacheBusting } from "../../lib/utils";
 
 interface HeroSectionProps {
   title: string;
@@ -35,7 +35,7 @@ export default function HeroSection({
 }: HeroSectionProps) {
   const containerClasses = classNames(
     "relative overflow-hidden",
-    fullHeight ? "min-h-screen" : "py-20 md:py-32",
+    fullHeight ? "min-h-screen" : "py-20 md:py-32 md:min-h-[500px]",
     className
   );
   
@@ -51,7 +51,7 @@ export default function HeroSection({
       <div className="absolute inset-0 z-0">
         {/* Mobile Image (default) */}
         <Image
-          src={image}
+          src={withCacheBusting(image)}
           alt={imageAlt}
           fill
           priority
@@ -64,23 +64,23 @@ export default function HeroSection({
         {/* Desktop Image (shown on md breakpoint and above) */}
         {desktopImage ? (
           <Image
-            src={desktopImage}
+            src={withCacheBusting(desktopImage)}
             alt={imageAlt}
             fill
             priority
             className={classNames(
-              "object-cover hidden md:block", 
+              "object-fill hidden md:block", 
               imagePositionClasses[imagePosition]
             )}
           />
         ) : (
           <Image
-            src={image}
+            src={withCacheBusting(image)}
             alt={imageAlt}
             fill
             priority
             className={classNames(
-              "object-cover hidden md:block", 
+              "object-fill hidden md:block", 
               imagePositionClasses[imagePosition]
             )}
           />

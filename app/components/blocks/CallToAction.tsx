@@ -1,7 +1,7 @@
 import Section from "../ui/Section";
 import Button from "../ui/Button";
 import Image from "next/image";
-import { classNames } from "../../lib/utils";
+import { classNames, withCacheBusting } from "../../lib/utils";
 
 interface CallToActionProps {
   title: string;
@@ -91,7 +91,7 @@ export default function CallToAction({
             )}
           >
             <Image
-              src={image}
+              src={withCacheBusting(image)}
               alt={imageAlt}
               fill
               className="object-cover rounded-lg"

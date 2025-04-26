@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { classNames } from "../../lib/utils";
+import { classNames, withCacheBusting } from "../../lib/utils";
 
 interface CardProps {
   title: string;
@@ -31,7 +31,7 @@ export default function Card({
       {image && (
         <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
           <Image
-            src={image}
+            src={withCacheBusting(image)}
             alt={imageAlt}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-105"

@@ -205,7 +205,7 @@ export default async function HomePage() {
         primaryButtonHref="/en/contact"
         secondaryButtonText="View Services"
         secondaryButtonHref="/en/services"
-        background="primary"
+        background="secondary"
       />
     </>
   );
