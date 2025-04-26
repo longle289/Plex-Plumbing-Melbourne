@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "Plex Plumbing Melbourne | Professional Plumbing Services",
   description: "Reliable and affordable plumbing solutions for homes and businesses in Melbourne. Emergency plumbing, repairs, installations, and more.",
   keywords: "plumbing, Melbourne, emergency plumbing, plumber, drain cleaning, hot water systems, bathroom renovations",
+  verification: {
+    google: "lKqSMGYWCEVgQU6o_X7PTRn9uEkcgtiYiroD-An9pfU",
+  },
 };
 
 export default function RootLayout({
