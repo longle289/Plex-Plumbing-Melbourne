@@ -22,6 +22,16 @@ export type Region = {
 
 export const services: Service[] = [
   {
+    id: "new-home-plumbing-services",
+    title: "New Home Plumbing Services",
+    shortDescription: "Complete plumbing solutions for new home construction projects.",
+    description: "Our new home plumbing services provide comprehensive solutions for residential construction projects. From initial planning and rough-in plumbing to final fixture installation and testing, our experienced team ensures your new home's plumbing system is installed correctly, efficiently, and in compliance with all building codes and regulations.",
+    icon: "/icons/emergency.svg",
+    image: "/images/New_Builds_Plumbing.jpeg",
+    blocks: ["intro", "services", "process", "quality", "testimonials"],
+    keywords: ["new home plumbing", "construction plumbing", "new build plumbing", "residential plumbing installation", "new house plumbing"]
+  },
+  {
     id: "emergency-plumbing",
     title: "Emergency Plumbing (24/7)",
     shortDescription: "Fast response to urgent plumbing issues any time of day or night.",
@@ -57,7 +67,7 @@ export const services: Service[] = [
     shortDescription: "Installation, repair, and maintenance of all hot water systems.",
     description: "Our comprehensive hot water system service covers installation, repair, and maintenance for all types of systems. Whether you need a new energy-efficient unit installed, repairs to your existing system, or regular maintenance to extend its lifespan, our specialists ensure reliable hot water for your home or business.",
     icon: "/icons/hot-water.svg",
-    image: "/images/Solar_Gas_Heater_Installation.jpeg",
+    image: "/images/Hot_Water_Service.jpeg",
     blocks: ["intro", "systems", "installation", "repairs", "maintenance"],
     keywords: ["hot water system installation", "water heater repair", "hot water service", "gas hot water", "electric hot water system"]
   },
@@ -87,7 +97,7 @@ export const services: Service[] = [
     shortDescription: "Complete plumbing solutions for your renovation projects.",
     description: "Our bathroom and kitchen renovation plumbing service provides complete solutions for your remodeling projects. From initial design consultation and pipework reconfiguration to fixture installation and final testing, our experienced team ensures all plumbing aspects of your renovation are handled professionally for a stunning and functional result.",
     icon: "/icons/renovation.svg",
-    image: "/images/Modern_Bathroom_renovation.jpeg",
+    image: "/images/Bathroom_Renovation.jpeg",
     blocks: ["intro", "services", "process", "gallery", "testimonials"],
     keywords: ["bathroom renovation plumbing", "kitchen plumbing upgrade", "plumbing renovation", "bathroom remodel", "kitchen plumbing installation"]
   },
@@ -137,7 +147,7 @@ export const services: Service[] = [
     shortDescription: "Effective systems to manage rainwater and prevent flooding.",
     description: "Our stormwater drainage installation service creates effective systems to manage rainwater and prevent property flooding. From designing appropriate drainage solutions to installing quality gutters, downpipes, and drainage channels, our team ensures proper water diversion that protects your property's foundation and landscape from water damage.",
     icon: "/icons/stormwater.svg",
-    image: "/images/Employee_Repairing_Garden_Drainage.jpeg",
+    image: "/images/StormWater.jpeg",
     blocks: ["intro", "assessment", "solutions", "installation", "maintenance"],
     keywords: ["stormwater drainage", "rainwater management", "flood prevention", "drainage system installation", "property drainage"]
   },
@@ -167,7 +177,7 @@ export const services: Service[] = [
     shortDescription: "Professional installation of cooling and heating systems.",
     description: "Our air conditioner and split system installation service delivers professional fitting of all cooling and heating units. Our qualified technicians handle every aspect from positioning and mounting to electrical connections and commissioning, ensuring optimal performance, energy efficiency, and compliance with all relevant regulations.",
     icon: "/icons/aircon.svg",
-    image: "/images/Employee_Installing_Airconditioner_Retail.jpeg",
+    image: "/images/Airconditioner_Install.jpeg",
     blocks: ["intro", "systems", "process", "positioning", "maintenance"],
     keywords: ["air conditioner installation", "split system fitting", "AC installation", "heating cooling system", "ducted air conditioning"]
   },

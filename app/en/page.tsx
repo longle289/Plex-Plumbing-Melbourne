@@ -1,19 +1,20 @@
 import { Metadata } from "next";
 import { generateMetadata } from "../lib/seo";
-import { services, locations } from "../lib/data";
+import { services, locations, Service } from "../lib/data";
 import HeroSection from "../components/blocks/HeroSection";
 import ServicesList from "../components/blocks/ServicesList";
 import FeaturesList from "../components/blocks/FeaturesList";
 import CallToAction from "../components/blocks/CallToAction";
 import TestimonialsList from "../components/blocks/TestimonialsList";
 import LocationsMap from "../components/blocks/LocationsMap";
+import ProjectGallery from "../components/blocks/ProjectGallery";
 
 export const metadata: Metadata = generateMetadata({
   title: "Professional Plumbing Services in Melbourne",
   description: "Reliable and affordable plumbing solutions for homes and businesses in Melbourne. Emergency plumbing, repairs, installations, and more.",
 });
 
-export default function HomePage() {
+export default async function HomePage() {
   // Features for the Why Choose Us section
   const features = [
     {
@@ -134,7 +135,14 @@ export default function HomePage() {
       
       {/* Services Section */}
       <ServicesList
-        services={services.slice(0, 6)}
+        services={[
+          "new-home-plumbing-services",
+          "air-conditioner-split-system-installation",
+          "hot-water-system-services",
+          "bathroom-kitchen-renovations",
+          "general-plumbing-repairs",
+          "stormwater-drainage-installation"
+        ].map(id => services.find(service => service.id === id)).filter(Boolean) as Service[]}
         title="Our Services"
         subtitle="Professional plumbing solutions for every need"
         showViewAll={true}
@@ -178,6 +186,15 @@ export default function HomePage() {
         subtitle="We provide plumbing services throughout Melbourne and surrounding areas"
         background="light"
         layout="accordion"
+      />
+      
+      {/* Project Gallery Section */}
+      <ProjectGallery
+        title="Gallery of Our Work"
+        subtitle="View our recently completed plumbing projects"
+        background="white"
+        layout="carousel"
+        slidesToShow={3}
       />
       
       {/* Final Call to Action */}

@@ -153,6 +153,7 @@ export default function ServicePage({ params }: ServicePageProps) {
 
 export async function generateStaticParams() {
   return [
+    { service: "new-home-plumbing-services" },
     { service: "emergency-plumbing" },
     { service: "general-plumbing-repairs" },
     { service: "blocked-drains-toilets" },

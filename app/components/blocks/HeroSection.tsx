@@ -6,6 +6,7 @@ interface HeroSectionProps {
   title: string;
   subtitle: string;
   image: string;
+  desktopImage?: string;
   primaryButtonText?: string;
   primaryButtonHref?: string;
   secondaryButtonText?: string;
@@ -21,6 +22,7 @@ export default function HeroSection({
   title,
   subtitle,
   image,
+  desktopImage,
   primaryButtonText,
   primaryButtonHref,
   secondaryButtonText,
@@ -45,15 +47,45 @@ export default function HeroSection({
   
   return (
     <div className={containerClasses}>
-      {/* Background Image */}
+      {/* Background Images */}
       <div className="absolute inset-0 z-0">
+        {/* Mobile Image (default) */}
         <Image
           src={image}
           alt={imageAlt}
           fill
           priority
-          className={classNames("object-cover", imagePositionClasses[imagePosition])}
+          className={classNames(
+            "object-cover md:hidden", 
+            imagePositionClasses[imagePosition]
+          )}
         />
+        
+        {/* Desktop Image (shown on md breakpoint and above) */}
+        {desktopImage ? (
+          <Image
+            src={desktopImage}
+            alt={imageAlt}
+            fill
+            priority
+            className={classNames(
+              "object-cover hidden md:block", 
+              imagePositionClasses[imagePosition]
+            )}
+          />
+        ) : (
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            priority
+            className={classNames(
+              "object-cover hidden md:block", 
+              imagePositionClasses[imagePosition]
+            )}
+          />
+        )}
+        
         {overlay && (
           <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
         )}
