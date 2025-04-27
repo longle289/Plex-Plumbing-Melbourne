@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://plexplumbing.com.au/sitemap.xml
