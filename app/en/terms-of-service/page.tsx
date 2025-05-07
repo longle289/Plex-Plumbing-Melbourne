@@ -18,7 +18,8 @@ export default function TermsOfServicePage() {
       <HeroSection
         title="Terms of Service"
         subtitle="The terms and conditions that govern your use of our services"
-        image="/images/Employee_Installing_Airconditioner_Retail.jpeg"
+        image="/images/Employee_Fixing_Kitchen_Retail_hero.jpeg"
+        desktopImage="/images/Employee_Hero_Widescreen.jpeg"
         imagePosition="right"
       />
       

@@ -18,7 +18,8 @@ export default function PrivacyPolicyPage() {
       <HeroSection
         title="Privacy Policy"
         subtitle="How we collect, use, and protect your personal information"
-        image="/images/Employee_Fixing_Kitchen_Retail.jpeg"
+        image="/images/Employee_Fixing_Kitchen_Retail_hero.jpeg"
+        desktopImage="/images/Employee_Hero_Widescreen.jpeg"
         imagePosition="right"
       />
       
