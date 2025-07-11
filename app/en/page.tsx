@@ -122,15 +122,16 @@ export default async function HomePage() {
     <>
       {/* Hero Section */}
       <HeroSection
-        title="Professional Plumbing Services in Melbourne"
-        subtitle="Reliable and affordable solutions for all your plumbing needs"
+        title="Melbourne's Most Trusted Emergency Plumbing Service"
+        subtitle="Available 24/7 for all your plumbing emergencies. Professional, reliable, and fast response guaranteed."
         image="/images/Employee_Fixing_Kitchen_Retail_hero.jpeg"
         desktopImage="/images/Employee_Hero_Widescreen.jpeg"
-        primaryButtonText="Request a Quote"
-        primaryButtonHref="/en/contact"
-        secondaryButtonText="Emergency Service"
-        secondaryButtonHref="/en/services/emergency-plumbing"
+        primaryButtonText="Call Now: 0405 707 017"
+        primaryButtonHref="tel:0405707017"
+        secondaryButtonText="Get Free Quote"
+        secondaryButtonHref="/en/contact"
         imagePosition="center"
+        fullHeight={true}
       />
       
       {/* Services Section */}

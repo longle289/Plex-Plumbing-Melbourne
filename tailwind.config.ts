@@ -25,7 +25,13 @@ const config: Config = {
           light: "var(--accent-light)",
           dark: "var(--accent-dark)",
         },
+        emergency: {
+          DEFAULT: "var(--emergency)",
+          light: "var(--emergency-light)",
+          dark: "var(--emergency-dark)",
+        },
         gray: {
+          50: "var(--gray-50)",
           100: "var(--gray-100)",
           200: "var(--gray-200)",
           300: "var(--gray-300)",

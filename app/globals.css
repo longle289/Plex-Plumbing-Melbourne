@@ -3,33 +3,39 @@
 @tailwind utilities;
 
 :root {
-  /* Primary color - matching logo colors */
-  --primary: #2168A6;
-  --primary-light: #99CCF7;
-  --primary-dark: #0D4A77;
+  /* Primary color - modern blue */
+  --primary: #0066CC;
+  --primary-light: #3385DB;
+  --primary-dark: #0052A3;
   
-  /* Secondary color - another shade of blue */
-  --secondary: #1A5F9C;
-  --secondary-light: #2980B9;
-  --secondary-dark: #0F3B61;
+  /* Secondary color - complementary orange */
+  --secondary: #FF6B35;
+  --secondary-light: #FF8A5B;
+  --secondary-dark: #E55A2B;
   
-  /* Accent color - representing eco-friendly solutions */
-  --accent: #3D7CAF;
-  --accent-light: #99CCF7;
-  --accent-dark: #2168A6;
+  /* Accent color - success green */
+  --accent: #00AA44;
+  --accent-light: #33BB66;
+  --accent-dark: #008833;
+  
+  /* Emergency red */
+  --emergency: #DC2626;
+  --emergency-light: #EF4444;
+  --emergency-dark: #B91C1C;
   
   /* Neutral colors */
   --background: #ffffff;
-  --foreground: #171717;
-  --gray-100: #f5f5f5;
-  --gray-200: #e5e5e5;
-  --gray-300: #d4d4d4;
-  --gray-400: #a3a3a3;
-  --gray-500: #737373;
-  --gray-600: #525252;
-  --gray-700: #404040;
-  --gray-800: #262626;
-  --gray-900: #171717;
+  --foreground: #1F2937;
+  --gray-50: #F9FAFB;
+  --gray-100: #F3F4F6;
+  --gray-200: #E5E7EB;
+  --gray-300: #D1D5DB;
+  --gray-400: #9CA3AF;
+  --gray-500: #6B7280;
+  --gray-600: #4B5563;
+  --gray-700: #374151;
+  --gray-800: #1F2937;
+  --gray-900: #111827;
 }
 
 body {
@@ -69,19 +75,23 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply bg-[var(--primary)] text-white px-6 py-3 rounded-full font-medium hover:bg-[var(--primary-dark)] transition-colors;
+    @apply bg-[var(--primary)] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[var(--primary-dark)] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1;
   }
   
   .btn-secondary {
-    @apply bg-[var(--secondary)] text-white px-6 py-3 rounded-full font-medium hover:bg-[var(--secondary-dark)] transition-colors;
+    @apply bg-[var(--secondary)] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[var(--secondary-dark)] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1;
   }
   
   .btn-accent {
-    @apply bg-[var(--accent)] text-white px-6 py-3 rounded-full font-medium hover:bg-[var(--accent-dark)] transition-colors;
+    @apply bg-[var(--accent)] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[var(--accent-dark)] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+  }
+  
+  .btn-emergency {
+    @apply bg-[var(--emergency)] text-white px-8 py-4 rounded-lg font-bold hover:bg-[var(--emergency-dark)] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 animate-pulse;
   }
   
   .btn-outline {
-    @apply border-2 border-[var(--primary)] text-[var(--primary)] px-6 py-3 rounded-full font-medium hover:bg-[var(--primary)] hover:text-white transition-colors;
+    @apply border-2 border-[var(--primary)] text-[var(--primary)] px-8 py-4 rounded-lg font-semibold hover:bg-[var(--primary)] hover:text-white transition-all duration-300 shadow-md hover:shadow-lg;
   }
   
   .container-custom {
@@ -89,7 +99,15 @@ body {
   }
   
   .section {
-    @apply py-12 md:py-16 lg:py-20;
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  
+  .card-modern {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent;
   }
 }
 
