@@ -34,7 +34,7 @@ export default function Header() {
             >
               Home
             </Link>
-            
+
             {/* Services Dropdown */}
             <div className="relative group" style={{ transition: 'all 0.3s ease' }}>
               <button
@@ -57,7 +57,7 @@ export default function Header() {
                   />
                 </svg>
               </button>
-              
+
               <div className="absolute left-0 mt-2 w-72 bg-white rounded-md shadow-lg py-2 z-10 hidden group-hover:block transition-all duration-300 opacity-0 group-hover:opacity-100">
                 {services.map((service: Service) => (
                   <Link
@@ -70,7 +70,7 @@ export default function Header() {
                 ))}
               </div>
             </div>
-            
+
             {/* Locations Dropdown */}
             <div className="relative group" style={{ transition: 'all 0.3s ease' }}>
               <button
@@ -93,7 +93,7 @@ export default function Header() {
                   />
                 </svg>
               </button>
-              
+
               <div className="absolute left-0 mt-2 w-72 bg-white rounded-md shadow-lg py-2 z-10 hidden group-hover:block transition-all duration-300 opacity-0 group-hover:opacity-100">
                 {locations.map((region: Region) => (
                   <div key={region.slug}>
@@ -103,7 +103,7 @@ export default function Header() {
                     >
                       {region.name}
                     </Link>
-                    
+
                     {region.cities.slice(0, 5).map((city: City) => (
                       <Link
                         key={city.slug}
@@ -113,7 +113,7 @@ export default function Header() {
                         {city.name}
                       </Link>
                     ))}
-                    
+
                     {region.cities.length > 5 && (
                       <Link
                         href={`/en/locations/${region.slug}`}
@@ -126,7 +126,7 @@ export default function Header() {
                 ))}
               </div>
             </div>
-            
+
             <Link
               href="/en/contact"
               className="text-gray-700 hover:text-primary font-medium"
@@ -158,7 +158,7 @@ export default function Header() {
               </svg>
               0414 276 859
             </a>
-            
+
             {/* Emergency Call Button */}
             <a
               href="tel:0414276859"
@@ -240,7 +240,7 @@ export default function Header() {
           >
             Home
           </Link>
-          
+
           {/* Mobile Services Dropdown */}
           <div>
             <button
@@ -266,7 +266,7 @@ export default function Header() {
                 />
               </svg>
             </button>
-            
+
             <div
               className={classNames(
                 "pl-4 space-y-2 mt-2",
@@ -285,7 +285,7 @@ export default function Header() {
               ))}
             </div>
           </div>
-          
+
           {/* Mobile Locations Dropdown */}
           <div>
             <button
@@ -311,7 +311,7 @@ export default function Header() {
                 />
               </svg>
             </button>
-            
+
             <div
               className={classNames(
                 "pl-4 space-y-2 mt-2",
@@ -327,7 +327,7 @@ export default function Header() {
                   >
                     {region.name}
                   </Link>
-                  
+
                   <div className="pl-4 space-y-1 mt-1">
                     {region.cities.slice(0, 3).map((city: City) => (
                       <Link
@@ -339,7 +339,7 @@ export default function Header() {
                         {city.name}
                       </Link>
                     ))}
-                    
+
                     {region.cities.length > 3 && (
                       <Link
                         href={`/en/locations/${region.slug}`}
@@ -354,7 +354,7 @@ export default function Header() {
               ))}
             </div>
           </div>
-          
+
           <Link
             href="/en/contact"
             className="block py-2 text-black md:text-gray-700 hover:text-primary font-medium"
@@ -362,7 +362,7 @@ export default function Header() {
           >
             Contact
           </Link>
-          
+
           {/* Phone Number */}
           <a 
             href="tel:0414276859" 
@@ -385,7 +385,7 @@ export default function Header() {
             </svg>
             0414 276 859
           </a>
-          
+
           {/* Emergency Call Button */}
           <a
             href="tel:0414276859"
