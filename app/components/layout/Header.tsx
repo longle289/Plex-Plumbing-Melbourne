@@ -160,8 +160,8 @@ export default function Header() {
             </a>
             
             {/* Emergency Call Button */}
-            <Link
-              href="/en/services/emergency-plumbing"
+            <a
+              href="tel:0414276859"
               className="btn-secondary flex items-center"
             >
               <svg
@@ -179,7 +179,7 @@ export default function Header() {
                 />
               </svg>
               Emergency Call
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -387,8 +387,8 @@ export default function Header() {
           </a>
           
           {/* Emergency Call Button */}
-          <Link
-            href="/en/services/emergency-plumbing"
+          <a
+            href="tel:0414276859"
             className="btn-secondary flex items-center justify-center mt-4"
             onClick={() => setMobileMenuOpen(false)}
           >
@@ -407,7 +407,7 @@ export default function Header() {
               />
             </svg>
             Emergency Call
-          </Link>
+          </a>
         </div>
       </div>
     </header>
