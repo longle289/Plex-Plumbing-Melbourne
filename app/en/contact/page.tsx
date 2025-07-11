@@ -36,7 +36,7 @@ export default function ContactPage() {
       answer: "Yes, we provide 24/7 emergency plumbing services. Our team is available around the clock to handle urgent plumbing issues, including weekends and holidays.",
     },
   ];
-  
+
   return (
     <>
       {/* Hero Section */}
@@ -45,10 +45,10 @@ export default function ContactPage() {
         subtitle="Get in touch with our team for all your plumbing needs"
         image="/images/Employee_Fixing_Kitchen_Retail.jpeg"
         primaryButtonText="Call Now"
-        primaryButtonHref="tel:0405707017"
+        primaryButtonHref="tel:0414276859"
         imagePosition="right"
       />
-      
+
       {/* Contact Form Section */}
       <ContactForm
         title="Get in Touch"
@@ -56,18 +56,18 @@ export default function ContactPage() {
         background="white"
         showContactInfo={true}
       />
-      
+
       {/* Emergency Call to Action */}
       <CallToAction
         title="Need Emergency Plumbing Service?"
         description="Our team is available 24/7 to handle any plumbing emergency. Don't wait until it's too late!"
         primaryButtonText="Call Now"
-        primaryButtonHref="tel:0405707017"
+        primaryButtonHref="tel:0414276859"
         secondaryButtonText="Learn More"
         secondaryButtonHref="/en/services/emergency-plumbing"
         background="secondary"
       />
-      
+
       {/* FAQ Section */}
       <FaqSection
         faqs={faqs}

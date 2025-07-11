@@ -326,7 +326,7 @@ export const locations: Region[] = [
 ];
 
 export const contactInfo = {
-  phone: "0405 707 017",
+  phone: "0414 276 859",
   email: "admin@plexplumbing.com.au",
   address: "Delahey, Victoria, 3037",
   hours: {
