@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-  /* Primary color - modern blue */
-  --primary: #0066CC;
-  --primary-light: #3385DB;
-  --primary-dark: #0052A3;
+  /* Primary color - Plex Plumbing blue (matching van) */
+  --primary: #1E88E5;
+  --primary-light: #42A5F5;
+  --primary-dark: #1565C0;
   
-  /* Secondary color - complementary orange */
-  --secondary: #FF6B35;
-  --secondary-light: #FF8A5B;
-  --secondary-dark: #E55A2B;
+  /* Secondary color - complementary dark blue */
+  --secondary: #0D47A1;
+  --secondary-light: #1976D2;
+  --secondary-dark: #0A3D91;
   
   /* Accent color - success green */
   --accent: #00AA44;
