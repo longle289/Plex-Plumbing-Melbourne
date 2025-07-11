@@ -4,14 +4,14 @@
 
 :root {
   /* Primary color - Plex Plumbing blue (matching van) */
-  --primary: #1E88E5;
-  --primary-light: #42A5F5;
-  --primary-dark: #1565C0;
+  --primary: #2196F3;
+  --primary-light: #64B5F6;
+  --primary-dark: #1976D2;
   
   /* Secondary color - complementary dark blue */
-  --secondary: #0D47A1;
+  --secondary: #1565C0;
   --secondary-light: #1976D2;
-  --secondary-dark: #0A3D91;
+  --secondary-dark: #0D47A1;
   
   /* Accent color - success green */
   --accent: #00AA44;
